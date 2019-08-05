@@ -1,0 +1,15 @@
+--pager=less -r
+
+--after-context=2
+--before-context=2
+
+--color-filename=black on_green
+--color-match=black on_red
+--color-lineno=green
+
+--ignore-dir=.cache
+--ignore-dir=.local
+--ignore-dir=.emacs.d
+--ignore-dir=.vim
+
+--known-types
