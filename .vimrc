@@ -1,11 +1,16 @@
-"Enable syntax highlight"
+" Enable syntax highlight
 syntax on
 
-"Ward off unexpected distro bullshit"
+" Ward off unexpected distro bullshit
 set nocompatible
 
-"Allow intelligent auto-indenting for each filetype"
+" Allow intelligent auto-indenting for each filetype"
 filetype plugin indent on
+
+" Not really sure what happens here but it lines up function arguments nicely
+" (for c and c++ files at least)
+set noet sts=0 sw=4 ts=4
+set cinoptions=(0,u0,U0
 
 set wrap
 set linebreak
@@ -13,41 +18,45 @@ set nolist
 
 set cursorline
 
-"Set tabs"
-"set autoindent"
-"set noexpandtab"
-"set tabstop=4"
-"set shiftwidth=4"
-
-"Ignore case when searching"
+" Ignore case when searching
 set ignorecase
 
-"Enable search while typing"
+" Enable search while typing
 set incsearch
 
-"Enable mouse"
+" Enable mouse
 set mouse=a
 
-"Display line numbers"
+" Display line numbers
 set number
-augroup numbertoggle
-	autocmd!
-	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END
 
-"Remap mapleader"
+" Relative numbers for active buffer
+" augroup numbertoggle
+" 	autocmd!
+" 	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+" 	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+" augroup END
+
+
+"##########"
+" KEYBINDS "
+"##########"
+"
+" Remap leader to spacebar
 let mapleader = " "
 
-"highlight Normal ctermbg=none
+" Make leader+w act as a shorthand for managing windows
+nmap <Leader>w <C-w>
 
-"Keybinds"
-vmap <C-c> "+y
+" Copy to system clipboard with ctrl+y
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
 
+" Paste from system clipboard with ctrl+p
 nnoremap <C-p> "+p
-"vmap <C-p> "+p
-nnoremap <Space> <NOP>
+inoremap <C-p> <ESC>"+pa
 
+" Switch panes
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -55,11 +64,20 @@ nmap <C-l> <C-w>l
 nmap <C-n> <C-w>n
 
 
+"#########"
+" VISUALS "
+"#########"
+
+hi Normal guibg=NONE ctermbg=NONE
+colorscheme srcery
 let g:airline_powerline_fonts=1
 set laststatus=2
 
-hi Normal guibg=NONE ctermbg=NONE
-
-colorscheme srcery
+" Hide bunch of stuff in inactive windows
+augroup NumbersCursorLineOnlyInActiveWindow
+	autocmd!
+	autocmd VimEnter,WinEnter,BufWinEnter * set number | set cursorline
+	autocmd WinLeave * set nonumber | set nocursorline
+augroup END
 
 execute pathogen#infect()
