@@ -1,6 +1,9 @@
 " Enable syntax highlight
 syntax on
 
+" This needs to be on for ctrlspace
+set hidden
+
 " Ward off unexpected distro bullshit
 set nocompatible
 
@@ -15,6 +18,12 @@ set cinoptions=(0,u0,U0
 set wrap
 set linebreak
 set nolist
+
+" Tabs should have the width of 4 spaces
+set tabstop=4
+set shiftwidth=4
+" Use spaces instead of tabs
+set expandtab
 
 set cursorline
 
