@@ -39,6 +39,9 @@ set mouse=a
 " Display line numbers
 set number
 
+" New splits should open below/right of current window
+set splitbelow splitright
+
 " Relative numbers for active buffer
 " augroup numbertoggle
 " 	autocmd!
