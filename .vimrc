@@ -46,6 +46,14 @@ set number
 " 	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 " augroup END
 
+" Tmux window titling
+augroup tmux
+    autocmd!
+    if exists('$TMUX')
+        autocmd BufReadPost,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
+        autocmd VimLeave,FocusLost * call system("tmux set-window-option automatic-rename")
+    endif
+augroup END
 
 "##########"
 " KEYBINDS "
