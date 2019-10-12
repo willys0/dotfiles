@@ -47,7 +47,6 @@ set nocompatible
 
     " Not really sure what happens here but it lines up function arguments nicely
     " (for c and c++ files at least)
-    set noet sts=0 sw=4 ts=4
     set cinoptions=(0,u0,U0
 
 
