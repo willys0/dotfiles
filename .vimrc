@@ -64,6 +64,7 @@ set nocompatible
     " Paste from system clipboard with ctrl+p
     nnoremap <C-p> "+p
     inoremap <C-p> <ESC>"+pa
+    vnoremap <C-p> "+p
 
     " Switch panes
     nmap <C-h> <C-w>h
