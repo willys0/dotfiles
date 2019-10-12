@@ -33,6 +33,9 @@ set nocompatible
     " Enable search while typing
     set incsearch
 
+    " Menu when autocompleting commands 
+    set wildmenu
+
     " New splits should open below/right of current window
     set splitbelow splitright
 
@@ -68,6 +71,11 @@ set nocompatible
     nmap <C-k> <C-w>k
     nmap <C-l> <C-w>l
     nmap <C-n> <C-w>n
+
+    " Fast buffer list + switch with double leader 
+    nmap <Leader><Leader> <Esc>:buffers<Enter>:b 
+    " Fast buffer list + kill with leader b and k
+    nmap <Leader>bk <Esc>:buffers<Enter>:bd 
 
 
 " Visuals
