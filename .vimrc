@@ -28,19 +28,27 @@ set nocompatible
     " Highlight active line
     set cursorline
 
+    " Highlight column 81 (to identify long lines)
+    set colorcolumn=81
+
     " Ignore case when searching
     set ignorecase
     " Enable search while typing
     set incsearch
 
-    " Menu when autocompleting commands 
+    " Menu when autocompleting commands
     set wildmenu
 
     " New splits should open below/right of current window
     set splitbelow splitright
 
-    " Disable automatic comment insertion on newline in normal mode
-    autocmd FileType * setlocal formatoptions-=o
+    " Enable folding by syntax
+    set foldmethod=syntax
+    " Unfold everything at start
+    set foldlevel=99
+    " Limit fold nesting
+    set foldnestmax=1
+
 
     " Enable syntax highlight
     syntax on
@@ -52,6 +60,8 @@ set nocompatible
     " (for c and c++ files at least)
     set cinoptions=(0,u0,U0
 
+    " Disable automatic comment insertion on newline in normal mode
+    autocmd FileType * setlocal formatoptions-=o
 
 " Keybinds
     " Make leader+w act as a shorthand for managing windows
@@ -73,11 +83,16 @@ set nocompatible
     nmap <C-l> <C-w>l
     nmap <C-n> <C-w>n
 
-    " Fast buffer list + switch with double leader 
+    " Fast buffer list + switch with double leader
     nmap <Leader><Leader> <Esc>:buffers<Enter>:b 
     " Fast buffer list + kill with leader b and k
     nmap <Leader>bk <Esc>:buffers<Enter>:bd 
 
+    " Unfold whatever is at current position
+    nnoremap <Leader>ff @=(foldlevel('.')?'za':"\<Space>")<CR>
+    " Fold and unfold everything
+    nmap <Leader>fa :setlocal foldlevel=0<CR>
+    nmap <Leader>fn :setlocal foldlevel=99<CR>
 
 " Visuals
     hi Normal guibg=NONE ctermbg=NONE
@@ -85,6 +100,15 @@ set nocompatible
     let g:airline_powerline_fonts=1
     set laststatus=2
 
+    " Highlight text as red on long lines
+    " highlight LineExcess ctermfg=red ctermbg=none
+    " call matchadd('LineExcess', '\%81v.*', 100)
+
+    " Highlight trailing whitespace
+    highlight TrailingWhitespace ctermbg=red
+    autocmd InsertEnter * highlight TrailingWhitespace ctermbg=none
+    autocmd InsertLeave * highlight TrailingWhitespace ctermbg=red
+    call matchadd('TrailingWhitespace', '\s\+$', 100)
 
 
 " If tmux is active, set window title to be name of open file
@@ -103,5 +127,6 @@ augroup NumbersCursorLineOnlyInActiveWindow
     autocmd WinLeave * set nonumber | set nocursorline
 augroup END
 
-
-execute pathogen#infect()
+" Plugins
+    nnoremap <Leader>wr :WinResizerStartResize<CR>
+    execute pathogen#infect()
