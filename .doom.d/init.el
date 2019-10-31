@@ -23,7 +23,7 @@
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       ;;fill-column       ; a `fill-column' indicator
+       fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        ;;indent-guides     ; highlighted indent columns
        modeline          ; snazzy, Atom-inspired modeline, plus API
@@ -56,8 +56,8 @@
 
        :emacs
        (dired            ; making dired pretty [functional]
-       ;;+ranger         ; bringing the goodness of ranger to dired
-       ;;+icons          ; colorful icons for dired-mode
+       +ranger         ; bringing the goodness of ranger to dired
+       +icons          ; colorful icons for dired-mode
         )
        electric          ; smarter, keyword-based electric-indent
        vc                ; version-control and Emacs, sitting in a tree
@@ -69,7 +69,7 @@
 
        :tools
        ;;ansible
-       ;;debugger          ; FIXME stepping through code, to help you add bugs
+       debugger          ; FIXME stepping through code, to help you add bugs
        ;;direnv
        ;;docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
@@ -83,7 +83,7 @@
        ;;lsp
        ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
-       ;;make              ; run make tasks from Emacs
+       make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        ;;pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
@@ -180,3 +180,17 @@
        ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
        ;; config. Use it as a reference for your own modules.
        (default +bindings +smartparens))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("423435c7b0e6c0942f16519fa9e17793da940184a50201a4d932eafe4c94c92d" "1728dfd9560bff76a7dc6c3f61e9f4d3e6ef9d017a83a841c117bd9bebe18613" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "428754d8f3ed6449c1078ed5b4335f4949dc2ad54ed9de43c56ea9b803375c23" "f2b83b9388b1a57f6286153130ee704243870d40ae9ec931d0a1798a5a916e76" "001c2ff8afde9c3e707a2eb3e810a0a36fb2b466e96377ac95968e7f8930a7c5" "f951343d4bbe5a90dba0f058de8317ca58a6822faa65d8463b0e751a07ec887c" "f589e634c9ff738341823a5a58fc200341b440611aaa8e0189df85b44533692b" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "f30aded97e67a487d30f38a1ac48eddb49fdb06ac01ebeaff39439997cbdd869" "5e0b63e0373472b2e1cf1ebcc27058a683166ab544ef701a6e7f2a9f33a23726" "2e0bde06b41da3c544b01cfb7a1f2aa28aa63cced3d3268235beb317a5c12ef6" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
