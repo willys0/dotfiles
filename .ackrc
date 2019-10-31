@@ -1,5 +1,3 @@
---pager=less -r
-
 --after-context=2
 --before-context=2
 
