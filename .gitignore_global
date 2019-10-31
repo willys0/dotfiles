@@ -1,0 +1,5 @@
+*.swp
+
+.projectile
+.dir-locals.el
+.clang_complete
