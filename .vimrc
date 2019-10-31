@@ -34,7 +34,7 @@ set nocompatible
     " Ignore case when searching
     set ignorecase
     " Enable search while typing
-    set incsearch
+    set incsearch 
 
     " Menu when autocompleting commands
     set wildmenu
@@ -64,6 +64,9 @@ set nocompatible
     autocmd FileType * setlocal formatoptions-=o
 
 " Keybinds
+    " Inverse tab with shift-tab
+    inoremap <S-Tab> <C-d>
+
     " Make leader+w act as a shorthand for managing windows
     nmap <Leader>w <C-w>
 
@@ -101,11 +104,11 @@ set nocompatible
     set laststatus=2
 
     " Highlight text as red on long lines
-    " highlight LineExcess ctermfg=red ctermbg=none
-    " call matchadd('LineExcess', '\%81v.*', 100)
+    highlight LineExcess ctermbg=8
+    call matchadd('LineExcess', '\%81v.*', 100)
 
     " Highlight trailing whitespace
-    highlight TrailingWhitespace ctermbg=red
+    highlight TrailingWhitespace ctermbg=black
     autocmd InsertEnter * highlight TrailingWhitespace ctermbg=none
     autocmd InsertLeave * highlight TrailingWhitespace ctermbg=red
     call matchadd('TrailingWhitespace', '\s\+$', 100)
@@ -129,4 +132,16 @@ augroup END
 
 " Plugins
     nnoremap <Leader>wr :WinResizerStartResize<CR>
+
+    nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+    let g:rainbow_active = 1
+    let g:rainbow_conf = {
+    \	'guifgs': ['Blue', 'Magenta', 'Green'],
+    \	'ctermfgs': ['Blue', 'Magenta', 'Green'],
+    \	'guis': [''],
+    \	'cterms': [''],
+    \	'operators': '_,_',
+    \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
+    \}
     execute pathogen#infect()
