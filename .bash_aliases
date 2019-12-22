@@ -13,3 +13,5 @@ alias vmore="vim -u ~/.vimrc.more -"
 alias bashrc="source ~/.bashrc"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias pdf='qpdfview --unique'
