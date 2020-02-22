@@ -7,7 +7,6 @@
 (setq projectile-indexing-method 'native)
 
 (setq
- projectile-project-search-path '("~/repos/")
  doom-font (font-spec :family "Ubuntu Mono" :size 17))
 
 (global-visual-line-mode 1)
