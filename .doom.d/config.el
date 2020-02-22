@@ -16,7 +16,5 @@
 (add-hook 'objc-mode-hook 'irony-mode)
 
 (map! :leader
-      (:prefix-map ("p" . "project")
-        :desc "Ag project"                      "f" #'ag-project)
       (:prefix-map ("c" . "code")
         :desc "Jump to header/source file"      "j" #'ff-find-other-file))
