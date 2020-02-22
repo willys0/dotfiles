@@ -7,7 +7,6 @@
 (setq projectile-indexing-method 'native)
 
 (setq
- projectile-project-search-path '("~/repos/")
  doom-font (font-spec :family "Ubuntu Mono" :size 17))
 
 (global-visual-line-mode 1)
@@ -17,7 +16,5 @@
 (add-hook 'objc-mode-hook 'irony-mode)
 
 (map! :leader
-      (:prefix-map ("p" . "project")
-        :desc "Ag project"                      "f" #'+ivy/ag)
       (:prefix-map ("c" . "code")
         :desc "Jump to header/source file"      "j" #'ff-find-other-file))
