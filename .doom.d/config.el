@@ -15,6 +15,8 @@
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
 
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
 (map! :leader
       (:prefix-map ("c" . "code")
         :desc "Jump to header/source file"      "j" #'ff-find-other-file))
