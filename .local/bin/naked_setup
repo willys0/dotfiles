@@ -13,4 +13,9 @@ apt-get update && (
     apt-get install tmux;
     apt-get install llvm-10 clang-10 libclang-10-dev; # emacs irony server depends on this
     )
+
+# Install fuzzy finder
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
+    ~/.fzf/install
+
 echo "source ~/.config/bash_aliases" >> .bashrc

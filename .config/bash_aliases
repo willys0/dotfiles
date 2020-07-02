@@ -15,3 +15,5 @@ alias bashrc="source ~/.bashrc"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias pdf='qpdfview --unique'
+
+alias fzv='vim $(fzf || echo "-c :q")'
