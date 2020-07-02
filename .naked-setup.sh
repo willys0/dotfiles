@@ -9,3 +9,15 @@ apt-get update && (
     apt-get install tmux;
     apt-get install llvm-10 clang-10 libclang-10-dev; # emacs irony server depends on this
     )
+
+# ROS Melodic install
+ROS_LIST_FILE=/etc/apt/sources.list.d/ros-latest.list
+if [ ! -f $ROS_LIST_FILE ]; then
+    (echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > $ROS_LIST_FILE &&
+        apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 &&
+        apt-get update &&
+        apt-get install ros-melodic-desktop-full python-rosdep python-rosinstall python-rosinstall-generator python-wstool python-rosdep &&
+        (echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc &&
+        source ~/.bashrc) &&
+        (rosdep init && rosdep update) )
+fi
