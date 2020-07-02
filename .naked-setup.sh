@@ -10,6 +10,7 @@ apt-get update && (
     apt-get install tmux;
     apt-get install llvm-10 clang-10 libclang-10-dev; # emacs irony server depends on this
     )
+echo "source ~/.local/bash_aliases" >> .bashrc
 
 # ROS Melodic install
 ROS_LIST_FILE=/etc/apt/sources.list.d/ros-latest.list
