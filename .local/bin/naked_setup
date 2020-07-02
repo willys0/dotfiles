@@ -15,6 +15,7 @@ apt-get update && (
     )
 echo "source ~/.local/bash_aliases" >> .bashrc
 
+
 # ROS Melodic install
 ROS_LIST_FILE=/etc/apt/sources.list.d/ros-latest.list
 if [ ! -f $ROS_LIST_FILE ]; then
