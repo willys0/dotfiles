@@ -22,3 +22,4 @@ if [ ! -f $ROS_LIST_FILE ]; then
         source ~/.bashrc) &&
         (rosdep init && rosdep update) )
 fi
+echo "source ~/.config/ros_aliases" >> ~/.bashrc
