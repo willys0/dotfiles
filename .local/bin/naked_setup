@@ -18,8 +18,7 @@ apt-get update && (
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
     ~/.fzf/install
 
-echo "source ~/.config/bash_aliases" >> .bashrc
-
+echo "source ~/.config/bash_aliases" >> ~/.bashrc
 
 # ROS Melodic install
 ROS_LIST_FILE=/etc/apt/sources.list.d/ros-latest.list
