@@ -12,10 +12,18 @@ apt-get update && (
         (git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d && ~/.emacs.d/bin/doom install && (echo "PATH=$PATH:~/.emacs.d/bin" >> ~/.bashrc)) );
     apt-get install tmux;
     apt-get install llvm-10 clang-10 libclang-10-dev; # emacs irony server depends on this
+    apt-get install libx11-dev libxft-dev
     )
+
+mkdir ~/repos
 
 # Install fuzzy finder
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
     ~/.fzf/install
+
+# Install st
+git clone https://git.suckless.org/st ~/repos/st &&
+    ln -s ~/.config/st_config ~/repos/st/config.h
+
 
 echo "source ~/.config/bash_aliases" >> ~/.bashrc
