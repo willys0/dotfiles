@@ -16,7 +16,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias pdf='qpdfview --unique'
 
-alias fzv='vim $(fzf || echo "-c :q")'
+alias fzv='vim "$(fzf || echo -c :q)"'
 
 alias stmux='st -e tmux'
 alias stmake='sudo make -C ~/repos/st clean install'
