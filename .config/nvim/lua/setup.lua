@@ -1,0 +1,34 @@
+local tab_cwds = {}
+
+
+-- function update_tab_cwd()
+--     local tabpage = vim.api.nvim_get_current_tabpage()
+--     tab_cwds[tabpage] = vim.fn.getcwd()
+-- end
+-- 
+-- local function initialize_tab_cwds()
+--     for _, tabpage in ipairs(vim.api.nvim_list_tabpages()) do
+--         vim.api.nvim_set_current_tabpage(tabpage)
+--         update_tab_cwd()
+--     end
+-- end
+-- 
+-- -- Restore CWD when switching to a tab
+-- function restore_tab_cwd()
+--     local tabpage = vim.api.nvim_get_current_tabpage()
+--     local cwd = tab_cwds[tabpage]
+--     if cwd then
+--         vim.cmd("silent cd " .. cwd)
+--     end
+-- end
+-- 
+-- initialize_tab_cwds()
+-- --
+--         --autocmd!
+-- vim.cmd([[
+--     augroup UpdateTabCwd
+--         autocmd!
+--         autocmd TabEnter * lua restore_tab_cwd()
+--         autocmd DirChanged * lua update_tab_cwd()
+--     augroup END
+-- ]])
