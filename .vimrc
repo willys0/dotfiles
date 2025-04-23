@@ -99,8 +99,6 @@ set nocompatible
 
 " Visuals
     hi Normal guibg=NONE ctermbg=NONE
-    colorscheme srcery
-    let g:airline_powerline_fonts=1
     set laststatus=2
 
     " Highlight text as red on long lines
@@ -130,18 +128,21 @@ augroup NumbersCursorLineOnlyInActiveWindow
     autocmd WinLeave * set nonumber | set nocursorline
 augroup END
 
-" Plugins
-    nnoremap <Leader>wr :WinResizerStartResize<CR>
+"" Plugins
+"    nnoremap <Leader>wr :WinResizerStartResize<CR>
+"
+"    nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+"
+"    let g:rainbow_active = 1
+"    let g:rainbow_conf = {
+"    \	'guifgs': ['Blue', 'Magenta', 'Green'],
+"    \	'ctermfgs': ['Blue', 'Magenta', 'Green'],
+"    \	'guis': [''],
+"    \	'cterms': [''],
+"    \	'operators': '_,_',
+"    \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
+"    \}
+"    execute pathogen#infect()
 
-    nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-
-    let g:rainbow_active = 1
-    let g:rainbow_conf = {
-    \	'guifgs': ['Blue', 'Magenta', 'Green'],
-    \	'ctermfgs': ['Blue', 'Magenta', 'Green'],
-    \	'guis': [''],
-    \	'cterms': [''],
-    \	'operators': '_,_',
-    \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
-    \}
-    execute pathogen#infect()
+" colorscheme srcery
+" let g:airline_powerline_fonts=1
